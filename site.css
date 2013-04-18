@@ -1,0 +1,13 @@
+
+.contents, 
+.head {
+    height: 300px;
+}
+
+.head {
+    position: absolute;
+}
+
+.contents {
+    margin-left: 200px;
+}
