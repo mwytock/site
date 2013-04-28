@@ -38,12 +38,12 @@
       order for $X_n$ to be a martingale we must have
       <ul>
         <li>$E(|X_n|) &lt; \infty$</li>
-        <li>$E(X_{t+1} | X_1, \ldots, X_n) = X_n$</li>
+        <li>$E(X_{n+1} | X_1, \ldots, X_n) = X_n$</li>
       </ul>
       for all $n$. Clearly, for $X_n$ describing our random walk, both
       conditions are true since $|X_n| \le n$ and
       \begin{equation}
-        E(X_{t+1} | X_1, \ldots, X_n) = E(Y_{t+1} + X_n| X_1, \ldots, X_n)  = X_n
+        E(X_{n+1} | X_1, \ldots, X_n) = E(Y_{n+1} + X_n| X_1, \ldots, X_n)  = X_n
       \end{equation}
       for all $n$. One nice property of a martingales is that we have $E(X_n) = E(X_1)$ by
       the <a href="http://en.wikipedia.org/wiki/Law_of_notal_expectation">law of
