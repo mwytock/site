@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A simple martingale for random walk stopping times</title>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/site.css" rel="stylesheet">
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$']]}
+      });
+    </script>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+    <div class="container">
+    <h1>A simple martingale for random walk stopping times</h1>
+
+    <p><a href="../">Matt Wytock</a> - April 28, 2013</p>
+    
+    <p>Random walks are simple processes used to describe many real world
+      phenomena such as gambling and the stock market. The underlying mechanism
+      is straightfoward: at round $n$, we have a random variable $Y_n$ which takes
+      the value +1 or -1 with probability $p$ and $1-p$. Here we will consider
+    symmetric random walks with $p = 1/2$, corresponding to a fair game.</p>
+
+    <p>If we let $X_n = \sum_{m=1}^n Y_m$, a natural question to consider is:
+      starting at $0$ and given some finite interval $(a,b)$ how long will the
+      random walk stay contained in this interval? As an example, consider a
+      game in which we quit once I have either lost $a$ dollars or
+      won $b$ dollars. If I win or lose $1 on each around with equal
+      probability, how long do we expect to play this game?</p> 
+    
+    <p>One way to answer this question is through the use of
+      <a href="http://en.wikipedia.org/wiki/Martingale_(probability_theory)">martingales</a>. In   
+      order for $X_n$ to be a martingale we must have
+      <ul>
+        <li>$E(|X_n|) &lt; \infty$</li>
+        <li>$E(X_{t+1} | X_1, \ldots, X_n) = X_n$</li>
+      </ul>
+      for all $n$. Clearly, for $X_n$ describing our random walk, both
+      conditions are true since $|X_n| \le n$ and
+      \begin{equation}
+        E(X_{t+1} | X_1, \ldots, X_n) = E(Y_{t+1} + X_n| X_1, \ldots, X_n)  = X_n
+      \end{equation}
+      for all $n$. One nice property of a martingales is that we have $E(X_n) = E(X_1)$ by
+      the <a href="http://en.wikipedia.org/wiki/Law_of_notal_expectation">law of
+      total expectation</a>.</p>
+    
+    <p>Using the given parametization for the random walk does not shed
+    any light on why how long this random walk is expected to take. However, if
+    we reformulate our random walk as a game between two parties, we can
+    describe it as two random variables $A_n = a + X_n$ and $B_n = 
+    b -X_n$ where $A_n$ and $B_n$ describe the amount of money each party has
+    after $n$ rounds and each party starts with $a$ and $b$ dollars,
+    respectively. Then, asking the question of when $X_n$ exits $(a, b)$
+    is equivalent to asking when $A_n = 0$ or $B_n = 0$.</p>
+    
+    <p>We can formalize this question using the notion of a 
+      <a href="http://en.wikipedia.org/wiki/Stopping_time">stopping time</a>
+      where we define $\tau$ as 
+      \begin{equation}
+        \tau = \inf \{ n: X_n \notin (a, b) \} = \inf \{ n: A_nB_n = 0 \}
+      \end{equation}
+      and consider $E(\tau)$. The trick to answering this question comes from
+      observing that $A_nB_n + n$ is also a martingale since
+      \begin{equation}
+        E(A_{n+1}B_{n+1} + (n+1) | A_n,B_n) = (A_n+1)(B_n-1)/2  +
+        (A_n-1)(B_n+1)/2 + (n+1) = A_nB_n + n.
+      \end{equation}
+    </p>
+
+    <p>It turns out that even though $\tau$ is a random quantity, under certain
+      conditions, we have $E(X_\tau) = E(X_1)$ by the
+      <a href="http://en.wikipedia.org/wiki/Optional_stopping_theorem">optional
+        stopping theorem</a>. In the case of our random walk, $E(\tau) &lt; \infty$
+      and $E(|X_n - X_{n+1}|X_1,\ldots,X_n)$ are sufficient for the optional
+        stopping theorem to hold. Applying this to the
+      martingale $A_nB_n + n$, and we have
+      \begin{equation}
+      ab = E(A_1B_1) = E(A_\tau B_\tau + \tau) = E(\tau)
+      \end{equation}
+      and thus we conclude that time for our random walk to exit the interval
+        $(a, b)$ is simply $ab$.</p>
+    </div>
+  </body>
+</html>
