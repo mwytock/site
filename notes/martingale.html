@@ -50,7 +50,7 @@
       total expectation</a>.</p>
     
     <p>Using the given parametization for the random walk does not shed
-    any light on why how long this random walk is expected to take. However, if
+    any light on how long this random walk is expected to take to exit $(a,b)$. However, if
     we reformulate our random walk as a game between two parties, we can
     describe it as two random variables $A_n = a + X_n$ and $B_n = 
     b -X_n$ where $A_n$ and $B_n$ describe the amount of money each party has
@@ -76,7 +76,7 @@
       conditions, we have $E(X_\tau) = E(X_1)$ by the
       <a href="http://en.wikipedia.org/wiki/Optional_stopping_theorem">optional
         stopping theorem</a>. In the case of our random walk, $E(\tau) &lt; \infty$
-      and $E(|X_n - X_{n+1}||X_1,\ldots,X_n) = 1$ are sufficient for the optional
+      and $E(|X_n - X_{n+1}||X_1,\ldots,X_n) < c$ are sufficient for the optional
         stopping theorem to hold. Applying this to the
       martingale $A_nB_n + n$, and we have
       \begin{equation}
