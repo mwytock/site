@@ -30,7 +30,7 @@
       starting at $0$ and given some finite interval $(a,b)$ how long will the
       random walk stay contained within this interval? As an example, consider a
       game in which we quit once we have either lost $a$ dollars or
-      won $b$ dollars. If we win or lose $1 on each around with equal
+      won $b$ dollars. If we win or lose $1 on each round with equal
       probability, how long do we expect to play this game?</p> 
     
     <p>One way to answer this question is through the use of
@@ -80,7 +80,7 @@
         stopping theorem to hold. Applying this to the
       martingale $A_nB_n + n$, and we have
       \begin{equation}
-      ab = E(A_1B_1) = E(A_\tau B_\tau + \tau) = E(\tau)
+      ab = E(A_1B_1 + 1) = E(A_\tau B_\tau + \tau) = E(\tau)
       \end{equation}
       and thus we conclude that time for our random walk to exit the interval
         $(a, b)$ is simply $ab$.</p>
