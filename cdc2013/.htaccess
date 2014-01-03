@@ -1,0 +1,6 @@
+AuthType Basic
+AuthName "CDC 2013"
+AuthUserFile /afs/cs.cmu.edu/user/mwytock/www/site/cdc2013/.htpasswd
+require valid-user
+order deny,allow
+allow from all
