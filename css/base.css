@@ -258,8 +258,8 @@ td.nowrap { white-space: nowrap; }
 
  @media print {
 
-.g-unit.g-first { display: none } 
+.g-unit.g-first { display: none }
 
-.g-section.g-tpl-180 .g-unit { margin-left: 0 } 
+.g-section.g-tpl-180 .g-unit { margin-left: 0 }
 
- } 
+ }
