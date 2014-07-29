@@ -1,5 +1,5 @@
 
-.contents, 
+.contents,
 .head {
     height: 300px;
 }
@@ -10,4 +10,16 @@
 
 .contents {
     margin-left: 200px;
+}
+
+.pubs li {
+    margin: 1em 0;
+}
+
+.pubs .pub-extra li {
+    margin: 0;
+}
+
+h3 {
+    margin-top: 1em;
 }
