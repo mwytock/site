@@ -1,19 +1,11 @@
 
-.contents,
 .head {
-    height: 300px;
-}
-
-.head {
-    position: absolute;
-}
-
-.contents {
-    margin-left: 200px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .pubs li {
-    margin: 1em 0;
+    margin: 1.2em 0;
 }
 
 .pubs .pub-extra li {
